@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TP_PAV_1._0
+namespace TP_PAV_1._0.Capa_UI
 {
-    public partial class Form1 : Form
+    public partial class MenuPrincipal : Form
     {
-        public Form1()
+        public MenuPrincipal()
         {
             InitializeComponent();
         }

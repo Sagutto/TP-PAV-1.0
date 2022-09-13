@@ -1,6 +1,6 @@
 ﻿namespace TP_PAV_1._0
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -64,7 +64,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(120, 145);
+            this.button2.Location = new System.Drawing.Point(132, 145);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
