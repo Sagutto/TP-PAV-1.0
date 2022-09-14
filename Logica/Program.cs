@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_PAV_1._0.Capa_UI;
 
 namespace TP_PAV_1._0
 {
@@ -16,7 +17,7 @@ namespace TP_PAV_1._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new MenuPrincipal());
         }
     }
 }

@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_Login_Aceptar = new System.Windows.Forms.Button();
+            this.txt_Login_User = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btn_Login_Salir = new System.Windows.Forms.Button();
+            this.txt_Login_Contraseña = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_testConection = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Login_Aceptar
             // 
-            this.button1.Location = new System.Drawing.Point(39, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Login_Aceptar.Location = new System.Drawing.Point(39, 145);
+            this.btn_Login_Aceptar.Name = "btn_Login_Aceptar";
+            this.btn_Login_Aceptar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Login_Aceptar.TabIndex = 0;
+            this.btn_Login_Aceptar.Text = "Aceptar";
+            this.btn_Login_Aceptar.UseVisualStyleBackColor = true;
+            this.btn_Login_Aceptar.Click += new System.EventHandler(this.btn_Login_Aceptar_Click);
             // 
-            // textBox1
+            // txt_Login_User
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 20);
-            this.textBox1.TabIndex = 1;
+            this.txt_Login_User.Location = new System.Drawing.Point(103, 68);
+            this.txt_Login_User.Name = "txt_Login_User";
+            this.txt_Login_User.Size = new System.Drawing.Size(132, 20);
+            this.txt_Login_User.TabIndex = 1;
             // 
             // label1
             // 
@@ -62,21 +64,22 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Usuario";
             // 
-            // button2
+            // btn_Login_Salir
             // 
-            this.button2.Location = new System.Drawing.Point(132, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Login_Salir.Location = new System.Drawing.Point(132, 145);
+            this.btn_Login_Salir.Name = "btn_Login_Salir";
+            this.btn_Login_Salir.Size = new System.Drawing.Size(75, 23);
+            this.btn_Login_Salir.TabIndex = 3;
+            this.btn_Login_Salir.Text = "Salir";
+            this.btn_Login_Salir.UseVisualStyleBackColor = true;
+            this.btn_Login_Salir.Click += new System.EventHandler(this.btn_Login_Salir_Click);
             // 
-            // textBox2
+            // txt_Login_Contraseña
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 104);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 20);
-            this.textBox2.TabIndex = 4;
+            this.txt_Login_Contraseña.Location = new System.Drawing.Point(103, 104);
+            this.txt_Login_Contraseña.Name = "txt_Login_Contraseña";
+            this.txt_Login_Contraseña.Size = new System.Drawing.Size(132, 20);
+            this.txt_Login_Contraseña.TabIndex = 4;
             // 
             // label2
             // 
@@ -97,19 +100,30 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Inicio de Sesion";
             // 
-            // Form1
+            // btn_testConection
+            // 
+            this.btn_testConection.Location = new System.Drawing.Point(235, 143);
+            this.btn_testConection.Name = "btn_testConection";
+            this.btn_testConection.Size = new System.Drawing.Size(59, 26);
+            this.btn_testConection.TabIndex = 7;
+            this.btn_testConection.Text = "button1";
+            this.btn_testConection.UseVisualStyleBackColor = true;
+            this.btn_testConection.Click += new System.EventHandler(this.btn_testConection_Click);
+            // 
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 194);
+            this.Controls.Add(this.btn_testConection);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.txt_Login_Contraseña);
+            this.Controls.Add(this.btn_Login_Salir);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Controls.Add(this.txt_Login_User);
+            this.Controls.Add(this.btn_Login_Aceptar);
+            this.Name = "Login";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -118,13 +132,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_Login_Aceptar;
+        private System.Windows.Forms.TextBox txt_Login_User;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btn_Login_Salir;
+        private System.Windows.Forms.TextBox txt_Login_Contraseña;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_testConection;
     }
 }
 
