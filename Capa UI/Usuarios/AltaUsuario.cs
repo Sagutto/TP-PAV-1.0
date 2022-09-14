@@ -109,6 +109,22 @@ namespace TP_PAV_1._0.Capa_UI
                 MessageBoxIcon.Exclamation);
                 return;
             }
+            if (txt_Contraseña.Text == "")
+            {
+                MessageBox.Show("Debe ingresar una contraseña valida",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (txt_Contraseña.Text != txt_ReptContraseña.Text)
+            {
+                MessageBox.Show("Las Contraseñas no Coinciden",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+                return;
+            }
             UserService.ModifUsuario(UsuarioSelect,txt_Nombre.Text, txt_Contraseña.Text, txt_Email.Text, 1);
             Close();
         }
