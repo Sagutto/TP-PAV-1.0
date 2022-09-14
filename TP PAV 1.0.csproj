@@ -124,6 +124,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataBase\BD_PAV %281%29.sql" />
     <Content Include="DataBase\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
