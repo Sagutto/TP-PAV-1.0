@@ -11,9 +11,8 @@ namespace TP_PAV_1._0.Datos
 
         private DBConector()
         {
-            string_conexion = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\agust\\Desktop\\PAVProy\\WindowsFormsApp1\\Database\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+            string_conexion = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\agust\\Desktop\\PAVProy\\TP PAV 1.0\\DataBase\\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         }
-
         public static DBConector GetDBConector()
         {
             if (instance == null)

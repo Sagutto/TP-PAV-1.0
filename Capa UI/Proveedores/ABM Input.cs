@@ -7,26 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TP_PAV_1._0.Logica.Servicios_de_Usuarios;
 using TP_PAV_1._0.Logica.Entidades;
+using TP_PAV_1._0.Logica.Servicios_de_Proveedor;
 
-namespace TP_PAV_1._0.Capa_UI
+
+namespace TP_PAV_1._0.Capa_UI.Proveedores
 {
-    public partial class AltaUsuario : Form
+    public partial class ABMProveedorInput : Form
     {
-        private Usuario UsuarioSelect;
-
-        private ABMEstado MyEstado;
-        public AltaUsuario()
+        public ABMProveedorInput()
         {
             InitializeComponent();
         }
-
-        private void btn_AUser_Cancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        public void ElegirModo(ABMEstado estado,Usuario UserSelect)
+        private Proveedor ProvSelected;
+        private ABMEstado MyEstado;
+        public void ElegirModo(ABMEstado estado, Proveedor ProvSelect)
         {
             switch (estado)
             {
@@ -35,23 +30,25 @@ namespace TP_PAV_1._0.Capa_UI
                     break;
                 case ABMEstado.Modificar:
                     MyEstado = ABMEstado.Modificar;
-                    UsuarioSelect = UserSelect;
-                    txt_Nombre.Text = UserSelect.Username;
+                    ProvSelected = ProvSelect;
+                    txt_Cuit.Text = ProvSelect.Cuit.ToString();
+                    txt_Cuit.Enabled = false;
+                    lbl_Tittle.Text = "Modificar Proveedor";
                     break;
                 case ABMEstado.Baja:
                     MyEstado = ABMEstado.Baja;
-                    UsuarioSelect = UserSelect;
-                    txt_Nombre.Text = UserSelect.Username;
-                    txt_Contraseña.Enabled = false;
-                    txt_Email.Enabled = false;
-                    txt_ReptContraseña.Enabled = false;
+                    ProvSelected = ProvSelect;
+                    txt_Cuit.Text = ProvSelect.Cuit.ToString();
+                    txt_Contacto.Enabled = false;
+                    txt_RazonSocial.Enabled = false;
+                    txt_Tel.Enabled = false;
+                    lbl_Tittle.Text = "Dar de baja Proveedor";
                     break;
             }
 
         }
         private void btn_ABMUser_Aceptar_Click(object sender, EventArgs e)
         {
-
             switch (MyEstado)
             {
                 case ABMEstado.Alta:
@@ -68,66 +65,79 @@ namespace TP_PAV_1._0.Capa_UI
 
         private void Alta()
         {
-            if (txt_Nombre.Text == "")
+            if (txt_Cuit.Text == "")
             {
-                MessageBox.Show("Debe ingresar un nombre de usuario valido",
+                MessageBox.Show("Debe ingresar un Cuit valido",
                 "Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
                 return;
             }
-            if (txt_Contraseña.Text == "")
+            if (txt_Contacto.Text == "")
             {
-                MessageBox.Show("Debe ingresar una contraseña valida",
+                MessageBox.Show("Debe ingresar una Contacto valido",
                 "Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
                 return;
             }
-            if (txt_Contraseña.Text != txt_ReptContraseña.Text)
+            if (txt_RazonSocial.Text == "")
             {
-                MessageBox.Show("Las Contraseñas no Coinciden",
+                MessageBox.Show("Debe Ingresar una Razon Social",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (txt_Tel.Text == "")
+            {
+                MessageBox.Show("Debe Ingresar un Telefono",
                 "Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
                 return;
             }
 
-            UserService.AgregarUsuario(new Usuario(0,txt_Nombre.Text, txt_Contraseña.Text, txt_Email.Text, 1));
+            ProveedorService.AgregarProv(new Proveedor(txt_Cuit.Text, txt_RazonSocial.Text, txt_Contacto.Text, txt_Tel.Text, true));
             Close();
         }
         private void Modifcar()
         {
-            if (txt_Nombre.Text == "")
+            if (txt_Contacto.Text == "")
             {
-                MessageBox.Show("Debe ingresar un nombre de usuario valido",
+                MessageBox.Show("Debe ingresar un Contacto valido",
                 "Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
                 return;
             }
-            if (txt_Contraseña.Text == "")
+            if (txt_RazonSocial.Text == "")
             {
-                MessageBox.Show("Debe ingresar una contraseña valida",
+                MessageBox.Show("Debe ingresar una Razon Social valida",
                 "Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
                 return;
             }
-            if (txt_Contraseña.Text != txt_ReptContraseña.Text)
+            if (txt_Tel.Text == "")
             {
-                MessageBox.Show("Las Contraseñas no Coinciden",
+                MessageBox.Show("Debe ingresar un Telefono valido",
                 "Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
                 return;
             }
-            UserService.ModifUsuario(UsuarioSelect, txt_Nombre.Text, txt_Contraseña.Text, txt_Email.Text, 1);
+            ProveedorService.ModifProv(ProvSelected, txt_Tel.Text, txt_Contacto.Text, txt_RazonSocial.Text);
             Close();
         }
         private void Baja()
         {
-            UserService.DarDeBajaUsuario(UsuarioSelect);
+            ProveedorService.DarDeBajaProv(ProvSelected);
+            Close();
+        }
+
+        private void btn_AUser_Cancelar_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }

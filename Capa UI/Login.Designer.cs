@@ -102,7 +102,7 @@
             // 
             // btn_testConection
             // 
-            this.btn_testConection.Location = new System.Drawing.Point(235, 143);
+            this.btn_testConection.Location = new System.Drawing.Point(244, 142);
             this.btn_testConection.Name = "btn_testConection";
             this.btn_testConection.Size = new System.Drawing.Size(59, 26);
             this.btn_testConection.TabIndex = 7;

@@ -30,31 +30,27 @@
         {
             this.grbx_ = new System.Windows.Forms.GroupBox();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.lbl_Perfil = new System.Windows.Forms.Label();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Cuit = new System.Windows.Forms.Label();
             this.dgr_Usuarios = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_Alta = new System.Windows.Forms.Button();
             this.btn_Baja = new System.Windows.Forms.Button();
+            this.cmb_Perfil = new System.Windows.Forms.ComboBox();
             this.grbx_.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_Usuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // grbx_
             // 
+            this.grbx_.Controls.Add(this.cmb_Perfil);
             this.grbx_.Controls.Add(this.btnConsultar);
-            this.grbx_.Controls.Add(this.comboBox1);
-            this.grbx_.Controls.Add(this.label3);
-            this.grbx_.Controls.Add(this.label2);
-            this.grbx_.Controls.Add(this.txtApellido);
+            this.grbx_.Controls.Add(this.lbl_Perfil);
             this.grbx_.Controls.Add(this.txt_Nombre);
-            this.grbx_.Controls.Add(this.label1);
-            this.grbx_.Location = new System.Drawing.Point(28, 29);
+            this.grbx_.Controls.Add(this.lbl_Cuit);
+            this.grbx_.Location = new System.Drawing.Point(43, 27);
             this.grbx_.Name = "grbx_";
             this.grbx_.Size = new System.Drawing.Size(616, 143);
             this.grbx_.TabIndex = 0;
@@ -71,66 +67,42 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // comboBox1
+            // lbl_Perfil
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(75, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 21);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Perfil";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Apellido";
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(75, 56);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(145, 20);
-            this.txtApellido.TabIndex = 2;
+            this.lbl_Perfil.AutoSize = true;
+            this.lbl_Perfil.Location = new System.Drawing.Point(25, 59);
+            this.lbl_Perfil.Name = "lbl_Perfil";
+            this.lbl_Perfil.Size = new System.Drawing.Size(30, 13);
+            this.lbl_Perfil.TabIndex = 3;
+            this.lbl_Perfil.Text = "Perfil";
             // 
             // txt_Nombre
             // 
-            this.txt_Nombre.Location = new System.Drawing.Point(75, 30);
+            this.txt_Nombre.Location = new System.Drawing.Point(101, 30);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(145, 20);
             this.txt_Nombre.TabIndex = 1;
             // 
-            // label1
+            // lbl_Cuit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
+            this.lbl_Cuit.AutoSize = true;
+            this.lbl_Cuit.Location = new System.Drawing.Point(25, 33);
+            this.lbl_Cuit.Name = "lbl_Cuit";
+            this.lbl_Cuit.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Cuit.TabIndex = 0;
+            this.lbl_Cuit.Text = "Nombre";
             // 
             // dgr_Usuarios
             // 
             this.dgr_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgr_Usuarios.Location = new System.Drawing.Point(28, 193);
+            this.dgr_Usuarios.Location = new System.Drawing.Point(43, 191);
             this.dgr_Usuarios.Name = "dgr_Usuarios";
             this.dgr_Usuarios.Size = new System.Drawing.Size(616, 150);
             this.dgr_Usuarios.TabIndex = 1;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(524, 372);
+            this.btnSalir.Location = new System.Drawing.Point(539, 370);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(120, 24);
             this.btnSalir.TabIndex = 8;
@@ -140,7 +112,7 @@
             // 
             // btn_Modificar
             // 
-            this.btn_Modificar.Location = new System.Drawing.Point(144, 373);
+            this.btn_Modificar.Location = new System.Drawing.Point(159, 371);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(95, 23);
             this.btn_Modificar.TabIndex = 8;
@@ -150,7 +122,7 @@
             // 
             // btn_Alta
             // 
-            this.btn_Alta.Location = new System.Drawing.Point(28, 373);
+            this.btn_Alta.Location = new System.Drawing.Point(43, 371);
             this.btn_Alta.Name = "btn_Alta";
             this.btn_Alta.Size = new System.Drawing.Size(110, 23);
             this.btn_Alta.TabIndex = 9;
@@ -160,13 +132,24 @@
             // 
             // btn_Baja
             // 
-            this.btn_Baja.Location = new System.Drawing.Point(245, 373);
+            this.btn_Baja.Location = new System.Drawing.Point(260, 371);
             this.btn_Baja.Name = "btn_Baja";
             this.btn_Baja.Size = new System.Drawing.Size(95, 23);
             this.btn_Baja.TabIndex = 10;
             this.btn_Baja.Text = "Dar de Baja";
             this.btn_Baja.UseVisualStyleBackColor = true;
             this.btn_Baja.Click += new System.EventHandler(this.btn_Baja_Click);
+            // 
+            // cmb_Perfil
+            // 
+            this.cmb_Perfil.FormattingEnabled = true;
+            this.cmb_Perfil.Items.AddRange(new object[] {
+            "Administrador",
+            "Invitado"});
+            this.cmb_Perfil.Location = new System.Drawing.Point(101, 59);
+            this.cmb_Perfil.Name = "cmb_Perfil";
+            this.cmb_Perfil.Size = new System.Drawing.Size(145, 21);
+            this.cmb_Perfil.TabIndex = 8;
             // 
             // MainUsuarios
             // 
@@ -191,11 +174,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbx_;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Label lbl_Cuit;
+        private System.Windows.Forms.Label lbl_Perfil;
         private System.Windows.Forms.TextBox txt_Nombre;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DataGridView dgr_Usuarios;
@@ -203,5 +183,6 @@
         private System.Windows.Forms.Button btn_Modificar;
         private System.Windows.Forms.Button btn_Alta;
         private System.Windows.Forms.Button btn_Baja;
+        private System.Windows.Forms.ComboBox cmb_Perfil;
     }
 }

@@ -16,9 +16,19 @@ namespace TP_PAV_1._0
 {
     public partial class Login : Form
     {
+        public delegate void onClosed(Usuario user);
+        public event onClosed OnClosed_TP;
+        private Usuario User;
         public Login()
         {
             InitializeComponent();
+            FormClosing += Login_FormClosing;
+           
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            OnClosed_TP(User);
         }
 
         private void btn_testConection_Click(object sender, EventArgs e)
@@ -53,7 +63,9 @@ namespace TP_PAV_1._0
                                 "Ingreso al sistema",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
-                Close();
+                User = UserService.GetUser(txt_Login_User.Text);
+                this.Close();
+                
             }
             else
             {

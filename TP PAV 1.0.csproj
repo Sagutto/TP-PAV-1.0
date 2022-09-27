@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -61,6 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capa UI\Proveedores\Consulta Provedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa UI\Proveedores\Consulta Provedores.Designer.cs">
+      <DependentUpon>Consulta Provedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa UI\Proveedores\ABM Input.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa UI\Proveedores\ABM Input.Designer.cs">
+      <DependentUpon>ABM Input.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capa UI\Usuarios\AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,12 +97,24 @@
     <Compile Include="Capa UI\Usuarios\MainUsuarios.Designer.cs">
       <DependentUpon>MainUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Datos\ProveedorDat.cs" />
+    <Compile Include="Datos\UsuariosDat.cs" />
     <Compile Include="Datos\DBConector.cs" />
+    <Compile Include="Logica\Entidades\ABMEstado_Enum,.cs" />
+    <Compile Include="Logica\Entidades\Proveedor.cs" />
     <Compile Include="Logica\Program.cs" />
+    <Compile Include="Logica\Servicios de Proveedor\ProveedorService.cs" />
+    <Compile Include="Logica\Servicios de Usuarios\Usuario.cs" />
     <Compile Include="Logica\Servicios de Usuarios\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Capa UI\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa UI\Proveedores\ABM Input.resx">
+      <DependentUpon>ABM Input.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa UI\Proveedores\Consulta Provedores.resx">
+      <DependentUpon>Consulta Provedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capa UI\Usuarios\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
@@ -125,6 +149,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\BD_PAV %281%29.sql" />
+    <Content Include="DataBase\Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataBase\Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="DataBase\TextFile1.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -139,5 +170,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
