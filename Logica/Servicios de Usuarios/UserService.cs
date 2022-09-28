@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using TP_PAV_1._0.Datos;
 using System.Data;
 using System.Windows.Forms;
-using TP_PAV_1._0.Datos;
 
 namespace TP_PAV_1._0.Logica.Servicios_de_Usuarios
 {
@@ -27,18 +26,18 @@ namespace TP_PAV_1._0.Logica.Servicios_de_Usuarios
             string consultaSQL = "SELECT * FROM Usuarios WHERE Activo = 1 AND UserName='"
                      + Usuario + "'";
             DataTable user = DBConector.GetDBConector().ConsultarTablaSQL(consultaSQL);
-            return user.Rows.Count == 0? null : UsuariosDat.CrearUsuarioFromRow(user.Rows[0]);
+            return user.Rows.Count == 0 ? null : UsuariosDat.CrearUsuarioFromRow(user.Rows[0]);
 
         }
-        public static List<Usuario> GetAll(string UserName = null,int Perfil = -1)
+        public static List<Usuario> GetAll(string UserName = null, int Perfil = -1)
         {
             List<Usuario> lst = new List<Usuario>();
             String strSql = "SELECT * FROM Usuarios WHERE Activo = 1";
-            if(UserName != null && UserName != "")
+            if (UserName != null && UserName != "")
             {
                 strSql += " AND UserName = '" + UserName + "'";
             }
-            if(Perfil != -1)
+            if (Perfil != -1)
             {
                 strSql += "AND id_Perfil = " + Perfil;
             }
@@ -53,7 +52,7 @@ namespace TP_PAV_1._0.Logica.Servicios_de_Usuarios
         public static void AgregarUsuario(Usuario user)
         {
             String strSql = "INSERT INTO Usuarios(UserName, Password, Email, id_Perfil)" +
-                "VALUES('" + user.Username + "', '" + user.Password + "', '" + user.Email + "', " + user.IdUser + ")";
+                "VALUES('" + user.Username + "', '" + user.Password + "', '" + user.Email + "', " + Convert.ToInt32(user.Perfil) + ")";
 
             DBConector.GetDBConector().EjecutarComando(strSql);
         }

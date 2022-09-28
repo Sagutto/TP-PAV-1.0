@@ -20,10 +20,18 @@ namespace TP_PAV_1._0.Logica.Servicios_de_Proveedor
             return user.Rows.Count == 0 ? null : ProveedorDat.CrearProveedorFromRow(user.Rows[0]);
 
         }
-        public static List<Proveedor> GetAll()
+        public static List<Proveedor> GetAll(string cuit, string RzSocial)
         {
             List<Proveedor> lst = new List<Proveedor>();
             String strSql = "SELECT * FROM Proveedor WHERE activo = 1";
+            if (cuit != null && cuit != "")
+            {
+                strSql += " AND cuitProveedor = '" + cuit + "'";
+            }
+            if (RzSocial != null && RzSocial != "")
+            {
+                strSql += " AND razonSocial = '" + RzSocial + "'";
+            }
 
             var resultadoConsulta = DBConector.GetDBConector().ConsultarTablaSQL(strSql);
             foreach (DataRow row in resultadoConsulta.Rows)

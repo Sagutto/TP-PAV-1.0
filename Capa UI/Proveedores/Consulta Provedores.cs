@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using TP_PAV_1._0.Logica.Servicios_de_Proveedor;
 using TP_PAV_1._0.Logica.Entidades;
 using TP_PAV_1._0.Datos;
@@ -26,39 +25,44 @@ namespace TP_PAV_1._0.Capa_UI.Proveedores
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            dgr_Proveedores.DataSource = ProveedorService.GetAll();
-            MessageBox.Show(ProveedorService.GetProv("2415111512").ToString());
+            dgr_Proveedores.DataSource = ProveedorService.GetAll(txt_Cuit.Text, txt_RzSocial.Text);
         }
 
         private void btn_Alta_Click(object sender, EventArgs e)
         {
             ABMProveedorInput frm = new ABMProveedorInput();
             frm.ElegirModo(ABMEstado.Alta, null);
+            frm.FormClosed += Frm_FormClosed;
             frm.ShowDialog();
+        }
+
+        private void Frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dgr_Proveedores.DataSource = ProveedorService.GetAll(txt_Cuit.Text, txt_RzSocial.Text);
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
             if (dgr_Proveedores.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar un Usuario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar un Proveedor", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             ABMProveedorInput frm = new ABMProveedorInput();
-            frm.ElegirModo(ABMEstado.Modificar,(Proveedor)dgr_Proveedores.CurrentRow.DataBoundItem);
-            MessageBox.Show(dgr_Proveedores.CurrentRow.DataBoundItem.ToString());
+            frm.ElegirModo(ABMEstado.Modificar, (Proveedor)dgr_Proveedores.CurrentRow.DataBoundItem);
+            frm.FormClosed += Frm_FormClosed;
             frm.ShowDialog();
         }
         private void btn_Baja_Click(object sender, EventArgs e)
         {
             if (dgr_Proveedores.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar un Usuario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar un Proveedor", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             ABMProveedorInput frm = new ABMProveedorInput();
             frm.ElegirModo(ABMEstado.Baja, (Proveedor)dgr_Proveedores.CurrentRow.DataBoundItem);
-            MessageBox.Show(dgr_Proveedores.CurrentRow.DataBoundItem.ToString());
+            frm.FormClosed += Frm_FormClosed;
             frm.ShowDialog();
         }
         private void btnSalir_Click(object sender, EventArgs e)

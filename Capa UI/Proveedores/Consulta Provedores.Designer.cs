@@ -36,8 +36,8 @@
             this.grbx_ = new System.Windows.Forms.GroupBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txt_Nombre = new System.Windows.Forms.TextBox();
+            this.txt_RzSocial = new System.Windows.Forms.TextBox();
+            this.txt_Cuit = new System.Windows.Forms.TextBox();
             this.lbl_Cuit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_Proveedores)).BeginInit();
             this.grbx_.SuspendLayout();
@@ -95,8 +95,8 @@
             // 
             this.grbx_.Controls.Add(this.btnConsultar);
             this.grbx_.Controls.Add(this.label2);
-            this.grbx_.Controls.Add(this.txtApellido);
-            this.grbx_.Controls.Add(this.txt_Nombre);
+            this.grbx_.Controls.Add(this.txt_RzSocial);
+            this.grbx_.Controls.Add(this.txt_Cuit);
             this.grbx_.Controls.Add(this.lbl_Cuit);
             this.grbx_.Location = new System.Drawing.Point(32, 18);
             this.grbx_.Name = "grbx_";
@@ -124,19 +124,19 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Razon Social";
             // 
-            // txtApellido
+            // txt_RzSocial
             // 
-            this.txtApellido.Location = new System.Drawing.Point(101, 56);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(145, 20);
-            this.txtApellido.TabIndex = 2;
+            this.txt_RzSocial.Location = new System.Drawing.Point(101, 56);
+            this.txt_RzSocial.Name = "txt_RzSocial";
+            this.txt_RzSocial.Size = new System.Drawing.Size(145, 20);
+            this.txt_RzSocial.TabIndex = 2;
             // 
-            // txt_Nombre
+            // txt_Cuit
             // 
-            this.txt_Nombre.Location = new System.Drawing.Point(101, 33);
-            this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(145, 20);
-            this.txt_Nombre.TabIndex = 1;
+            this.txt_Cuit.Location = new System.Drawing.Point(101, 33);
+            this.txt_Cuit.Name = "txt_Cuit";
+            this.txt_Cuit.Size = new System.Drawing.Size(145, 20);
+            this.txt_Cuit.TabIndex = 1;
             // 
             // lbl_Cuit
             // 
@@ -177,8 +177,8 @@
         private System.Windows.Forms.GroupBox grbx_;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txt_Nombre;
+        private System.Windows.Forms.TextBox txt_RzSocial;
+        private System.Windows.Forms.TextBox txt_Cuit;
         private System.Windows.Forms.Label lbl_Cuit;
     }
 }

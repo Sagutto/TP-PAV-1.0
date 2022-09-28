@@ -33,15 +33,22 @@ namespace TP_PAV_1._0.Capa_UI.Proveedores
                     ProvSelected = ProvSelect;
                     txt_Cuit.Text = ProvSelect.Cuit.ToString();
                     txt_Cuit.Enabled = false;
+                    txt_Contacto.Text = ProvSelect.Contacto;
+                    txt_Tel.Text = ProvSelect.Telefono;
+                    txt_RazonSocial.Text = ProvSelect.RazonSocial;
                     lbl_Tittle.Text = "Modificar Proveedor";
                     break;
                 case ABMEstado.Baja:
                     MyEstado = ABMEstado.Baja;
                     ProvSelected = ProvSelect;
                     txt_Cuit.Text = ProvSelect.Cuit.ToString();
+                    txt_Contacto.Text = ProvSelect.Contacto;
+                    txt_Tel.Text = ProvSelect.Telefono;
+                    txt_RazonSocial.Text = ProvSelect.RazonSocial;
                     txt_Contacto.Enabled = false;
                     txt_RazonSocial.Enabled = false;
                     txt_Tel.Enabled = false;
+                    txt_Cuit.Enabled = false;
                     lbl_Tittle.Text = "Dar de baja Proveedor";
                     break;
             }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_PAV_1._0.Logica.Servicios_de_Usuarios;
 using TP_PAV_1._0.Logica.Entidades;
+using TP_PAV_1._0.Capa_UI.Usuarios;
 
 namespace TP_PAV_1._0.Capa_UI
 {
@@ -20,13 +21,14 @@ namespace TP_PAV_1._0.Capa_UI
         public AltaUsuario()
         {
             InitializeComponent();
+            cmb_Perfil.DataSource = Enum.GetValues(typeof(PerfilUser));
         }
 
         private void btn_AUser_Cancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
-        public void ElegirModo(ABMEstado estado,Usuario UserSelect)
+        public void ElegirModo(ABMEstado estado, Usuario UserSelect)
         {
             switch (estado)
             {
@@ -37,14 +39,23 @@ namespace TP_PAV_1._0.Capa_UI
                     MyEstado = ABMEstado.Modificar;
                     UsuarioSelect = UserSelect;
                     txt_Nombre.Text = UserSelect.Username;
+                    txt_Email.Text = UserSelect.Email;
+                    txt_Contraseña.Enabled = false;
+                    txt_ReptContraseña.Enabled = false;
+                    cmb_Perfil.SelectedItem = UserSelect.Perfil;
+                    cmb_Perfil.Enabled = false;
                     break;
                 case ABMEstado.Baja:
                     MyEstado = ABMEstado.Baja;
                     UsuarioSelect = UserSelect;
                     txt_Nombre.Text = UserSelect.Username;
+                    txt_Email.Text = UserSelect.Email;
+                    txt_Nombre.Enabled = false;
                     txt_Contraseña.Enabled = false;
                     txt_Email.Enabled = false;
                     txt_ReptContraseña.Enabled = false;
+                    cmb_Perfil.SelectedItem = UserSelect.Perfil;
+                    cmb_Perfil.Enabled = false;
                     break;
             }
 
@@ -92,8 +103,16 @@ namespace TP_PAV_1._0.Capa_UI
                 MessageBoxIcon.Exclamation);
                 return;
             }
-
-            UserService.AgregarUsuario(new Usuario(0,txt_Nombre.Text, txt_Contraseña.Text, txt_Email.Text, 1));
+            if (cmb_Perfil.Text == "")
+            {
+                MessageBox.Show("Seleccione un Perfil de Usuario",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+                return;
+            }
+            PerfilUser perfil = (PerfilUser)cmb_Perfil.SelectedItem;
+            UserService.AgregarUsuario(new Usuario(0, txt_Nombre.Text, txt_Contraseña.Text, txt_Email.Text, perfil));
             Close();
         }
         private void Modifcar()
