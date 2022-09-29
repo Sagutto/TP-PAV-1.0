@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grbx_ = new System.Windows.Forms.GroupBox();
+            this.cmb_Perfil = new System.Windows.Forms.ComboBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.lbl_Perfil = new System.Windows.Forms.Label();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
@@ -38,7 +39,6 @@
             this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_Alta = new System.Windows.Forms.Button();
             this.btn_Baja = new System.Windows.Forms.Button();
-            this.cmb_Perfil = new System.Windows.Forms.ComboBox();
             this.grbx_.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_Usuarios)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,17 @@
             this.grbx_.TabIndex = 0;
             this.grbx_.TabStop = false;
             this.grbx_.Text = "Filtros de Usuarios";
+            // 
+            // cmb_Perfil
+            // 
+            this.cmb_Perfil.FormattingEnabled = true;
+            this.cmb_Perfil.Items.AddRange(new object[] {
+            "Administrador",
+            "Invitado"});
+            this.cmb_Perfil.Location = new System.Drawing.Point(101, 59);
+            this.cmb_Perfil.Name = "cmb_Perfil";
+            this.cmb_Perfil.Size = new System.Drawing.Size(145, 21);
+            this.cmb_Perfil.TabIndex = 8;
             // 
             // btnConsultar
             // 
@@ -94,6 +105,7 @@
             // 
             // dgr_Usuarios
             // 
+            this.dgr_Usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgr_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgr_Usuarios.Location = new System.Drawing.Point(43, 191);
             this.dgr_Usuarios.Name = "dgr_Usuarios";
@@ -139,17 +151,6 @@
             this.btn_Baja.Text = "Dar de Baja";
             this.btn_Baja.UseVisualStyleBackColor = true;
             this.btn_Baja.Click += new System.EventHandler(this.btn_Baja_Click);
-            // 
-            // cmb_Perfil
-            // 
-            this.cmb_Perfil.FormattingEnabled = true;
-            this.cmb_Perfil.Items.AddRange(new object[] {
-            "Administrador",
-            "Invitado"});
-            this.cmb_Perfil.Location = new System.Drawing.Point(101, 59);
-            this.cmb_Perfil.Name = "cmb_Perfil";
-            this.cmb_Perfil.Size = new System.Drawing.Size(145, 21);
-            this.cmb_Perfil.TabIndex = 8;
             // 
             // MainUsuarios
             // 

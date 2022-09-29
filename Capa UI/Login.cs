@@ -59,7 +59,7 @@ namespace TP_PAV_1._0
 
             if(UserService.ValidarUsuario(txt_Login_User.Text, txt_Login_Contraseña.Text))
             {
-                MessageBox.Show("Usuario Logeado correctamente",
+                MessageBox.Show("Inicio de Sesión exitoso",
                                 "Ingreso al sistema",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);

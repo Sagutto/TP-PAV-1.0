@@ -78,6 +78,7 @@
             // 
             this.txt_Login_Contraseña.Location = new System.Drawing.Point(103, 104);
             this.txt_Login_Contraseña.Name = "txt_Login_Contraseña";
+            this.txt_Login_Contraseña.PasswordChar = '*';
             this.txt_Login_Contraseña.Size = new System.Drawing.Size(132, 20);
             this.txt_Login_Contraseña.TabIndex = 4;
             // 
@@ -98,7 +99,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 20);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Inicio de Sesion";
+            this.label3.Text = "Inicio de Sesión";
             // 
             // btn_testConection
             // 
