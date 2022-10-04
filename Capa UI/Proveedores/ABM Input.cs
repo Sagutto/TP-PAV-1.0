@@ -23,6 +23,7 @@ namespace TP_PAV_1._0.Capa_UI.Proveedores
         private ABMEstado MyEstado;
         public void ElegirModo(ABMEstado estado, Proveedor ProvSelect)
         {
+
             switch (estado)
             {
                 case ABMEstado.Alta:
@@ -56,6 +57,8 @@ namespace TP_PAV_1._0.Capa_UI.Proveedores
         }
         private void btn_ABMUser_Aceptar_Click(object sender, EventArgs e)
         {
+            float t4 = 15.5f;
+            MessageBox.Show(t4.ToString());
             switch (MyEstado)
             {
                 case ABMEstado.Alta:

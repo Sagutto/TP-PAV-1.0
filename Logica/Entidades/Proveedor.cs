@@ -28,5 +28,11 @@ namespace TP_PAV_1._0.Logica.Entidades
         public string Contacto { get => contacto; set => contacto = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public bool Activo { get => activo; set => activo = value; }
+
+        public override string ToString()
+        {
+            return razonSocial + "//" + contacto + "//" + telefono;
+        }
+
     }
 }

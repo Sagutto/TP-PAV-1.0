@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using TP_PAV_1._0.Capa_UI.Usuarios;
 using TP_PAV_1._0.Logica.Servicios_de_Usuarios;
 using TP_PAV_1._0.Capa_UI.Proveedores;
+using TP_PAV_1._0.Capa_UI.Productos;
+
 
 namespace TP_PAV_1._0.Capa_UI
 {
@@ -51,6 +53,12 @@ namespace TP_PAV_1._0.Capa_UI
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainProveedores login = new MainProveedores();
+            login.ShowDialog();
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ProductosMain login = new ProductosMain();
             login.ShowDialog();
         }
     }
